@@ -46,6 +46,10 @@ case "$1" in
     create_local_data) create_local_data ;;
     build_reporter) build_reporter ;;
     run_reporter) run_reporter ;;
+    structure) structure ;;
+    clear_data) clear_data ;;
+    inside_generator) inside_generator ;;
+    inside_reporter) inside_reporter ;;
     *)
         echo "Используй:"
         echo "  build_generator"
@@ -53,5 +57,9 @@ case "$1" in
         echo "  create_local_data"
         echo "  build_reporter"
         echo "  run_reporter"
+        echo "  structure"
+        echo "  clear_data"
+        echo "  inside_generator"
+        echo "  inside_reporter"
         ;;
 esac
