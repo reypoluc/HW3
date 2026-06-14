@@ -13,6 +13,17 @@ create_local_data() {
     python3 generator/generate.py data
 }
 
+
+build_reporter() {
+    docker build -t data-reporter ./reporter
+}
+
+run_reporter() {
+    docker run --rm -v "$(pwd)/data:/data" data-reporter node report.js
+}
+
+
+
 case "$1" in
     build_generator) build_generator ;;
     run_generator) run_generator ;;
