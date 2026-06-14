@@ -23,6 +23,23 @@ run_reporter() {
 }
 
 
+structure() {
+    find . -not -path '*/\.*' | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+}
+
+clear_data() {
+    rm -f data/*.csv data/*.html
+}
+
+inside_generator() {
+    docker run --rm -it -v "$(pwd)/data:/data" data-generator /bin/bash
+}
+
+inside_reporter() {
+    docker run --rm -it -v "$(pwd)/data:/data" data-reporter /bin/sh
+}
+
+
 case "$1" in
     build_generator) build_generator ;;
     run_generator) run_generator ;;
