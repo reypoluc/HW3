@@ -23,15 +23,18 @@ run_reporter() {
 }
 
 
-
 case "$1" in
     build_generator) build_generator ;;
     run_generator) run_generator ;;
     create_local_data) create_local_data ;;
-        *)
+    build_reporter) build_reporter ;;
+    run_reporter) run_reporter ;;
+    *)
         echo "Используй:"
         echo "  build_generator"
         echo "  run_generator"
         echo "  create_local_data"
+        echo "  build_reporter"
+        echo "  run_reporter"
         ;;
 esac
